@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types';
+import styles from './Statistics.module.css';
 
 
 export default function Statistics({ title, stats }) {
     return (
-        <section class="statistics">
-            {title && <h2 class="title">{title}</h2>}
+        <section className={styles.statistics}>
+            {/* {title && <h2 className={styles.title}>{title}</h2>} */}
+            {title ? <h2 className={styles.title}>{title}</h2> : <h2 style={{display: 'none'}}>{title}</h2>}
 
-            <ul class="stat-list">
+            <ul className={styles.statList}>
                 {stats.map(itemStats => (
-                  <li class="item" key={itemStats.id}>
-                    <span class="label">{itemStats.label}</span>
-                    <span class="percentage">{itemStats.percentage}</span>
+                    <li className={styles.item} key={itemStats.id} style={{backgroundColor:`rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)})` }}>
+                        <span className={styles.label}>{itemStats.label}</span>
+                        <span className={styles.percentage}>{itemStats.percentage}</span>
                 </li>  
                 ))}
             </ul>
@@ -26,4 +28,8 @@ Statistics.propTypes = {
         label: PropTypes.string,
         percentage: PropTypes.number
     }))
+}
+
+function getRandom(min, max){
+  return Math.ceil(Math.random() * (max - min) + min)
 }
