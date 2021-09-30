@@ -5,7 +5,6 @@ import styles from './Statistics.module.css';
 export default function Statistics({ title, stats }) {
     return (
         <section className={styles.statistics}>
-            {/* {title && <h2 className={styles.title}>{title}</h2>} */}
             {title ? <h2 className={styles.title}>{title}</h2> : <h2 style={{display: 'none'}}>{title}</h2>}
 
             <ul className={styles.statList}>
