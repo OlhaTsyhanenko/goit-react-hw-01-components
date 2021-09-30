@@ -12,7 +12,8 @@ function App() {
   return (
     <div className="App">
       
-        <Profile
+      <Profile
+        // {...user}
         name={user.name}
         tag={user.tag}
         location={user.location}
