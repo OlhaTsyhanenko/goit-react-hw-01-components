@@ -3,7 +3,6 @@ import defaultImg from '../default.jpg';
 
 
 export default function FriendList({ friends }) {
-    console.log(friends.avatar);
     return (
         <ul class="friend-list">
             {friends.map(friend => (
