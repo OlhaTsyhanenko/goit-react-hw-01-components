@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import defaultImg from './default.jpg';
+import defaultImg from '../default.jpg';
 
 export default function Profile({ name, tag, location, avatar, stats }) {
   return (
